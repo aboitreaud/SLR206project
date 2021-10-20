@@ -32,7 +32,7 @@ for bench in ${benchs}; do
          r=$((2*${i}))
          out=${output}/log/${bench}-i${i}-u${write}-t${t}-w${warmup}-d${duration}.log
          echo "${java} -cp ${CP} ${MAINCLASS} -W ${warmup} -u ${write} -d ${duration} -t ${t} -i ${i} -r ${r} -b ${bench}"
-         ${java} -cp ${CP} ${MAINCLASS} -W ${warmup} -u ${write} -d ${duration} -t ${t} -i ${i} -r ${r} -b ${bench} 2>&1 >> ${out}
+         ${java} -cp ${CP} ${MAINCLASS} -W ${warmup} -u ${write} -d ${duration} -t ${t} -i ${i} -r ${r} -b ${bench} 2>&1 > ${out}
        done
     done
   done

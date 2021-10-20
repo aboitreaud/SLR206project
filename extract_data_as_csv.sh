@@ -1,5 +1,4 @@
 #!/bin/bash
-
 dir=.
 output=${dir}/output
 bin=${bin}/bin
@@ -25,7 +24,7 @@ for bench in ${benchs}; do
   for write in ${writes}; do
     for t in ${threads}; do
        for i in ${sizes}; do
-         grep Throughput ${dir}/${output}/cleaned_log/${bench}-i${i}-u${write}-t${t}-w${warmup}-d${duration}.log | awk -v ORS="," '{print $3}' >> ${output}/data/${bench:22}_${filename}
+         grep Throughput ${output}/log/${bench}-i${i}-u${write}-t${t}-w${warmup}-d${duration}.log | awk -v ORS="," '{print $3}' >> ${output}/data/${bench:22}_${filename}
          echo -n ${t} >> ${output}/data/${bench:22}_${filename}
          echo -n ',' >> ${output}/data/${bench:22}_${filename}
          echo -n ${write} >> ${output}/data/${bench:22}_${filename}
